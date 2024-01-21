@@ -1325,49 +1325,49 @@
   ],
   "bookmarks": [
     {
-      "cityName": "Abalessa",
-      "country": "Algeria",
-      "countryCode": "DZ",
-      "latitude": "23.18455079512732",
-      "longitude": "3.795523257510883",
-      "host_location": "Abalessa Algeria",
+      "cityName": "Zagora",
+      "country": "Morocco",
+      "countryCode": "MA",
+      "latitude": "30.050076521698735",
+      "longitude": "-6.328125000000001",
+      "host_location": "Zagora Morocco",
       "id": 1
     },
     {
-      "cityName": "Mahidasht",
-      "country": "Iran (Islamic Republic of)",
-      "countryCode": "IR",
-      "latitude": "34.32869425037187",
-      "longitude": "46.724183117022086",
-      "host_location": "Mahidasht Iran (Islamic Republic of)",
+      "cityName": "Corral de Calatrava",
+      "country": "Spain",
+      "countryCode": "ES",
+      "latitude": "38.84826438869913",
+      "longitude": "-4.130859375000001",
+      "host_location": "Corral de Calatrava Spain",
+      "id": 2
+    },
+    {
+      "cityName": "Saint-Maur",
+      "country": "France",
+      "countryCode": "FR",
+      "latitude": "46.581518465658014",
+      "longitude": "2.2851562500000004",
+      "host_location": "Saint-Maur France",
+      "id": 3
+    },
+    {
+      "cityName": "Japura",
+      "country": "Brazil",
+      "countryCode": "BR",
+      "latitude": "-1.2852925793638545",
+      "longitude": "-69.16992187500001",
+      "host_location": "Japura Brazil",
       "id": 4
     },
     {
-      "cityName": "Sanandaj",
-      "country": "Iran (Islamic Republic of)",
-      "countryCode": "IR",
-      "latitude": "35.31372444726279",
-      "longitude": "47.03114358752335",
-      "host_location": "Sanandaj Iran (Islamic Republic of)",
+      "cityName": "As Sukhnah",
+      "country": "Syrian Arab Republic (the)",
+      "countryCode": "SY",
+      "latitude": "34.4793919710481",
+      "longitude": "39.19921875000001",
+      "host_location": "As Sukhnah Syrian Arab Republic (the)",
       "id": 5
-    },
-    {
-      "cityName": "A Dakhla Oasis",
-      "country": "Egypt",
-      "countryCode": "EG",
-      "latitude": "25.02090651422749",
-      "longitude": "29.09059588509316",
-      "host_location": "A Dakhla Oasis Egypt",
-      "id": 7
-    },
-    {
-      "cityName": "Baba Kot",
-      "country": "Pakistan",
-      "countryCode": "PK",
-      "latitude": "28.43528783183169",
-      "longitude": "67.78003711374224",
-      "host_location": "Baba Kot Pakistan",
-      "id": 8
     }
   ]
 }

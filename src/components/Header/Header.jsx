@@ -1,13 +1,13 @@
 import { MdLocationOn, MdLogout } from "react-icons/md";
-import { HiCalendar, HiMinus, HiPlus, HiSearch } from "react-icons/hi";
+import { HiCalendar, HiLogout, HiMinus, HiPlus, HiSearch } from "react-icons/hi";
 import { useRef, useState } from "react";
 import useOutsideClick from "../../hooks/useOutsideClick";
 import "react-date-range/dist/styles.css"; // main style file
 import "react-date-range/dist/theme/default.css"; // theme css file
 import { DateRange } from "react-date-range";
 import { format } from "date-fns";
+import { Link } from "react-router-dom";
 import {
-  NavLink,
   createSearchParams,
   useNavigate,
   useSearchParams,
@@ -16,9 +16,7 @@ import { useAuth } from "../context/AuthProvider";
 
 function Header() {
   const [searchParams, setSearchParams] = useSearchParams();
-  const [destination, setDestination] = useState(
-    searchParams.get("destination") || ""
-  );
+  const [destination, setDestination] = useState(searchParams.get("destination") || "");
   const [openOptions, setOpenOptions] = useState(false);
   const [options, setOptions] = useState({
     adult: 1,
@@ -58,7 +56,7 @@ function Header() {
 
   return (
     <div className="header">
-      <NavLink to="/bookmark">Bookmarks</NavLink>
+      <Link to="/bookmark" className="Bookmarks">Bookmarks</Link>
       <div className="headerSearch">
         <div className="headerSearchItem">
           <MdLocationOn className="headerIcon locationIcon" />
@@ -172,24 +170,23 @@ function OptionItem({ options, type, minLimit, handleOptions }) {
 
 function User() {
   const navigate = useNavigate();
-  const { user, isAuthenticated, logout } = useAuth();
+  const { user, isAuthenticated  , logout} = useAuth();
   const handleLogout = () => {
     logout();
-    navigate("/");
-  };
+    navigate("/")
+  }
 
   return (
     <div>
-      {isAuthenticated ? (
+      {isAuthenticated ?
         <div>
           <strong>{user.name}</strong>
           <button>
-            &nbsp; <MdLogout onClick={handleLogout} className="logout icon" />
+            <MdLogout onClick={handleLogout} className="logout icon"/>
           </button>
-        </div>
-      ) : (
-        <NavLink to="/login">login</NavLink>
-      )}
+        </div> :
+        <Link to="/login" className="Login">Login</Link>}
     </div>
-  );
+  )
+
 }

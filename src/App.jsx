@@ -1,56 +1,46 @@
-import { Toaster } from "react-hot-toast";
-import "./App.css";
 import Header from "./components/Header/Header";
+import "./App.css";
+import { Toaster } from "react-hot-toast";
 import LocationList from "./components/LocationList/LocationList";
-import { Route, Routes } from "react-router-dom";
-import AppLayout from "./components/AppLayout/AppLayout";
+import { Routes, Route } from "react-router-dom"
+import AppLayou from "./components/AppLayou/AppLayou";
 import Hotels from "./components/Hotels/Hotels";
 import HotelsProvider from "./components/context/HotelsProvider";
 import SingleHotel from "./components/SingleHotel/SingleHotel";
-import BookmarkLayout from "./components/BookmarkLayout/BookmarkLayout";
-import BookmarkListProvider from "./components/context/BookmarkListContext";
+import BookmarLayout from "./components/BookmarLayout/BookmarLayout";
+import BookmarkProvider from "./components/context/BookmarkListContext";
 import Bookmark from "./components/Bookmark/Bookmark";
 import SingleBookmark from "./components/SingleBookmark/SingleBookmark";
 import AddNewBookmark from "./components/AddNewBookmark/AddNewBookmark";
+import AuthProvider from "./components/context/AuthProvider";
 import Login from "./components/Login/Login";
-import AuthProvier from "./components/context/AuthProvider";
 import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
-
 function App() {
   return (
-    <AuthProvier>
-      <BookmarkListProvider>
+    <AuthProvider>
+      <BookmarkProvider>
         <HotelsProvider>
           <Toaster />
           <Header />
           <Routes>
-            <Route path="/" element={<LocationList />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/hotels" element={<AppLayout />}>
-              <Route index element={<Hotels />} />
-              <Route path=":id" element={<SingleHotel />} />
+            <Route path="/" element={<LocationList />}></Route>
+            <Route path="/bookmark"></Route>
+            <Route path="/login" element={<Login/>}></Route>
+            <Route path="/hotels" element={<AppLayou />}>
+              <Route index element={<Hotels />}></Route>
+              <Route path=":id" element={<SingleHotel />}></Route>
             </Route>
-            <Route
-              path="/bookmark"
-              element={
-                <ProtectedRoute>
-                  <BookmarkLayout />
-                </ProtectedRoute>
-              }
-            >
-              <Route index element={<Bookmark />} />
-              <Route path=":id" element={<SingleBookmark />} />
-              <Route path="add" element={<AddNewBookmark />} />
+            <Route path="/bookmark" element={<ProtectedRoute><BookmarLayout/></ProtectedRoute>}>
+              <Route index element={<Bookmark />}></Route>
+              <Route path=":id" element={<SingleBookmark />}></Route>
+              <Route path="add" element={<AddNewBookmark />}></Route>
             </Route>
           </Routes>
         </HotelsProvider>
-      </BookmarkListProvider>
-    </AuthProvier>
-  );
+      </BookmarkProvider>
+    </AuthProvider>
+  )
 }
 
 export default App;
 
-// authentication => who is he /she ? : information => name, ...
-// authorization => what access have to routes or files ()
-// role => user, admin, content manager ,...

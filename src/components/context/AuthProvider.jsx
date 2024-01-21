@@ -25,7 +25,7 @@ function authReducer(state, action) {
 }
 
 const FAKE_USER = {
-  name: "Saheb",
+  name: "Kaveh",
   email: "user@gmail.com",
   password: "1234",
 };

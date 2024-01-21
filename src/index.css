@@ -14,7 +14,17 @@
   --primary-100: #e0e7ff;
   --rose-500: #f43f5e;
 }
+
+@font-face {
+  font-family: vazir;
+  src: url("/fonts/vaizr.eot") format("truetype"),
+  url("/fonts/vazir.ttf") format("ttf"),
+  url("/fonts/vazir.woff") format("wofft"),
+  url("/fonts/vazir.woff2") format("woff2");
+}
+
 body {
+  font-family: vazir;
   min-height: 100vh;
   padding: 1rem;
 }
@@ -27,7 +37,12 @@ body {
   border: none;
 }
 
+input {
+  font-family: vazir;
+}
+
 button {
+  font-family: vazir;
   outline: none;
   border: none;
   background-color: transparent;
