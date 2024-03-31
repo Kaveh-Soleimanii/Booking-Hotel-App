@@ -5,7 +5,7 @@ import axios from "axios";
 import toast from "react-hot-toast";
 const HotelContext = createContext();
 function HotelsProvider({ children }) {
-const BASE_URL = "http://localhost:5000/hotels"
+const BASE_URL = "https://hotel-app.liara.run/hotels"
 
 
     const [currentHotel , setCurrentHotel] = useState(null);

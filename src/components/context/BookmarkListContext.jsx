@@ -1,10 +1,9 @@
-import { createContext, useContext, useEffect, useReducer, useState } from "react"
+import { createContext, useContext, useEffect, useReducer} from "react"
 import axios from "axios";
 import toast from "react-hot-toast";
-import { da } from "date-fns/locale";
 const BookmarkContext = createContext();
 function BookmarkProvider({ children }) {
-    const BASE_URL = " http://localhost:5000"
+    const BASE_URL = " https://hotel-app.liara.run"
 
     const intialStatae = {
         bookmarks: [],
