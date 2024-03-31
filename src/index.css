@@ -1,0 +1,60 @@
+:root {
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto,
+    Helvetica Neue, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  --bg-color: #f3f4f6;
+  --text-700: #374151;
+  --text-400: #94a3b8;
+  --text-500: #64748b;
+  --text-100: #f1f5f9;
+  --text-300: #d1d5db;
+  --white: #fff;
+  --primary-700: #4338ca;
+  --primary-600: #4f46e5;
+  --primary-100: #e0e7ff;
+  --rose-500: #f43f5e;
+}
+
+@font-face {
+  font-family: vazir;
+  src: url("/fonts/vaizr.eot") format("truetype"),
+  url("/fonts/vazir.ttf") format("ttf"),
+  url("/fonts/vazir.woff") format("wofft"),
+  url("/fonts/vazir.woff2") format("woff2");
+}
+
+body {
+  font-family: vazir;
+  min-height: 100vh;
+  padding: 1rem;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  outline: none;
+  border: none;
+}
+
+input {
+  font-family: vazir;
+}
+
+button {
+  font-family: vazir;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
