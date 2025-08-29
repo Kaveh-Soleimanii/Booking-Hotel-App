@@ -299,7 +299,6 @@
   height: 1.1rem;
 }
 
-
 /* form */
 
 .form .formControl {
@@ -336,6 +335,7 @@
 
 .btn--back {
   border: 1px solid var(--text-400);
+  margin-bottom: 16px;
 }
 
 .formControl .flag {
@@ -371,19 +371,119 @@ a.active {
   height: 1.1rem;
 }
 
-a.Login{
+a.Login {
   color: var(--primary-600);
   font-size: 18px;
   font-weight: bold;
 }
 
-a.Bookmarks{
+a.Bookmarks {
   color: var(--primary-600);
   font-weight: bold;
 }
 
-.userName{
+.userName {
   color: black;
   font-weight: bold;
-  
+}
+
+/* responsive header search */
+@media screen and (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+  }
+
+  .headerSearch {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+    padding: 0.75rem;
+  }
+
+  .headerSearchItem {
+    width: 100%;
+  }
+
+  .headerSearchItem.data {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .headerSearchInput {
+    width: 100%;
+  }
+
+  .headerSearchItem .seperator {
+    display: none;
+  }
+
+  .dateDropDown {
+    margin-left: 0;
+  }
+
+  .date {
+    position: static;
+    top: auto;
+    left: auto;
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+
+  .guestOptions {
+    left: 0;
+    right: 0;
+    width: 100%;
+    top: 2.5rem;
+  }
+
+  .headerSearchBtn {
+    width: 100%;
+    padding: 0.8rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .headerIcon {
+    width: 1.2rem;
+    height: 1.2rem;
+  }
+
+  .dateDropDown {
+    font-size: 0.9rem;
+  }
+}
+
+/* responsive bookmark layout */
+@media screen and (max-width: 768px) {
+  .appLayout {
+    flex-direction: column-reverse;
+    height: auto;
+  }
+
+  .sidebar {
+    width: 100%;
+    padding-right: 0;
+    overflow: visible;
+  }
+
+  .mapContainer {
+    height: 300px;
+    flex: 0 0 auto;
+    width: 100%;
+    margin-bottom: 16px;
+  }
+
+  .map {
+    height: 100%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .mapContainer {
+    height: 240px;
+    flex: 0 0 auto;
+    width: 100%;
+  }
 }

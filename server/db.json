@@ -951,7 +951,7 @@
         "height": 426,
         "url": "https://public.opendatasoft.com/api/explore/v2.1/catalog/datasets/airbnb-listings/files/089848e03bb2b3b495ad7dc8f7640af4"
       },
-      "xl_picture_url": "https://a0.muscache.com/im/pictures/440cb88b-6a93-48bc-b87f-78675ea40c60.jpg?aki_policy=x_large",
+      "xl_picture_url": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/12/0f/21/f0/estrel-berlin.jpg?w=900&h=500&s=1",
       "host_id": "14694975",
       "host_url": "https://www.airbnb.com/users/show/14694975",
       "host_name": "Robin&Thaís",
@@ -1221,7 +1221,7 @@
         "height": 426,
         "url": "https://public.opendatasoft.com/api/explore/v2.1/catalog/datasets/airbnb-listings/files/2e202e79e908a132d144cc32168fcfc3"
       },
-      "xl_picture_url": null,
+      "xl_picture_url": "https://static-new.lhw.com/HotelImages/Final/LW0903/lw0903_64141089_720x450.jpg",
       "host_id": "40565986",
       "host_url": "https://www.airbnb.com/users/show/40565986",
       "host_name": "Claudia",
@@ -1323,51 +1323,5 @@
       ]
     }
   ],
-  "bookmarks": [
-    {
-      "cityName": "Zagora",
-      "country": "Morocco",
-      "countryCode": "MA",
-      "latitude": "30.050076521698735",
-      "longitude": "-6.328125000000001",
-      "host_location": "Zagora Morocco",
-      "id": 1
-    },
-    {
-      "cityName": "Corral de Calatrava",
-      "country": "Spain",
-      "countryCode": "ES",
-      "latitude": "38.84826438869913",
-      "longitude": "-4.130859375000001",
-      "host_location": "Corral de Calatrava Spain",
-      "id": 2
-    },
-    {
-      "cityName": "Saint-Maur",
-      "country": "France",
-      "countryCode": "FR",
-      "latitude": "46.581518465658014",
-      "longitude": "2.2851562500000004",
-      "host_location": "Saint-Maur France",
-      "id": 3
-    },
-    {
-      "cityName": "Japura",
-      "country": "Brazil",
-      "countryCode": "BR",
-      "latitude": "-1.2852925793638545",
-      "longitude": "-69.16992187500001",
-      "host_location": "Japura Brazil",
-      "id": 4
-    },
-    {
-      "cityName": "As Sukhnah",
-      "country": "Syrian Arab Republic (the)",
-      "countryCode": "SY",
-      "latitude": "34.4793919710481",
-      "longitude": "39.19921875000001",
-      "host_location": "As Sukhnah Syrian Arab Republic (the)",
-      "id": 5
-    }
-  ]
+  "bookmarks": []
 }

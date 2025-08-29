@@ -2,7 +2,7 @@ import Header from "./components/Header/Header";
 import "./App.css";
 import { Toaster } from "react-hot-toast";
 import LocationList from "./components/LocationList/LocationList";
-import { Routes, Route } from "react-router-dom"
+import { Routes, Route } from "react-router-dom";
 import AppLayou from "./components/AppLayou/AppLayou";
 import Hotels from "./components/Hotels/Hotels";
 import HotelsProvider from "./components/context/HotelsProvider";
@@ -24,13 +24,19 @@ function App() {
           <Header />
           <Routes>
             <Route path="/" element={<LocationList />}></Route>
-            <Route path="/bookmark"></Route>
-            <Route path="/login" element={<Login/>}></Route>
+            <Route path="/login" element={<Login />}></Route>
             <Route path="/hotels" element={<AppLayou />}>
               <Route index element={<Hotels />}></Route>
               <Route path=":id" element={<SingleHotel />}></Route>
             </Route>
-            <Route path="/bookmark" element={<ProtectedRoute><BookmarLayout/></ProtectedRoute>}>
+            <Route
+              path="/bookmark"
+              element={
+                <ProtectedRoute>
+                  <BookmarLayout />
+                </ProtectedRoute>
+              }
+            >
               <Route index element={<Bookmark />}></Route>
               <Route path=":id" element={<SingleBookmark />}></Route>
               <Route path="add" element={<AddNewBookmark />}></Route>
@@ -39,8 +45,7 @@ function App() {
         </HotelsProvider>
       </BookmarkProvider>
     </AuthProvider>
-  )
+  );
 }
 
 export default App;
-

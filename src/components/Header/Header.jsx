@@ -1,5 +1,11 @@
 import { MdLocationOn, MdLogout } from "react-icons/md";
-import { HiCalendar, HiLogout, HiMinus, HiPlus, HiSearch } from "react-icons/hi";
+import {
+  HiCalendar,
+  HiLogout,
+  HiMinus,
+  HiPlus,
+  HiSearch,
+} from "react-icons/hi";
 import { useRef, useState } from "react";
 import useOutsideClick from "../../hooks/useOutsideClick";
 import "react-date-range/dist/styles.css"; // main style file
@@ -16,7 +22,9 @@ import { useAuth } from "../context/AuthProvider";
 
 function Header() {
   const [searchParams, setSearchParams] = useSearchParams();
-  const [destination, setDestination] = useState(searchParams.get("destination") || "");
+  const [destination, setDestination] = useState(
+    searchParams.get("destination") || ""
+  );
   const [openOptions, setOpenOptions] = useState(false);
   const [options, setOptions] = useState({
     adult: 1,
@@ -41,10 +49,10 @@ function Header() {
       };
     });
   };
-  const handleSearch = () => {
+  const handleSearch = (e) => {
     const encodedParams = createSearchParams({
       date: JSON.stringify(date),
-      destination,
+      destination: destination || "",
       options: JSON.stringify(options),
     });
     //note : =>  setSearchParams(encodedParams);
@@ -56,28 +64,49 @@ function Header() {
 
   return (
     <div className="header">
-      <Link to="/bookmark" className="Bookmarks">Bookmarks</Link>
+      <Link to="/bookmark" className="Bookmarks">
+        Bookmarks
+      </Link>
       <div className="headerSearch">
         <div className="headerSearchItem">
           <MdLocationOn className="headerIcon locationIcon" />
           <input
             value={destination}
-            onChange={(e) => setDestination(e.target.value)}
+            onChange={(e) => {
+              setDestination(e.target.value);
+              if (!e.target.value) handleSearch(e);
+            }}
             type="text"
             placeholder="where to go?"
             className="headerSearchInput"
             name="destination"
             id="destination"
+            onKeyDown={(e) => {
+              if (e.key === "Enter") {
+                handleSearch();
+              }
+            }}
           />
           <span className="seperator"></span>
         </div>
-        <div className="headerSearchItem">
-          <HiCalendar className="headerIcon dateIcon" />
-          <div onClick={() => setOpenDate(!openDate)} className="dateDropDown">
-            {`${format(date[0].startDate, "MM/dd/yyyy")} to ${format(
-              date[0].endDate,
-              "MM/dd/yyyy"
-            )}`}
+        <div className="headerSearchItem data">
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: "8px",
+            }}
+          >
+            <HiCalendar className="headerIcon dateIcon" />
+            <div
+              onClick={() => setOpenDate(!openDate)}
+              className="dateDropDown"
+            >
+              {`${format(date[0].startDate, "MM/dd/yyyy")} to ${format(
+                date[0].endDate,
+                "MM/dd/yyyy"
+              )}`}
+            </div>
           </div>
           {openDate && (
             <DateRange
@@ -170,23 +199,26 @@ function OptionItem({ options, type, minLimit, handleOptions }) {
 
 function User() {
   const navigate = useNavigate();
-  const { user, isAuthenticated  , logout} = useAuth();
+  const { user, isAuthenticated, logout } = useAuth();
   const handleLogout = () => {
     logout();
-    navigate("/")
-  }
+    navigate("/");
+  };
 
   return (
     <div>
-      {isAuthenticated ?
+      {isAuthenticated ? (
         <div>
           <strong>{user.name}</strong>
           <button>
-            <MdLogout onClick={handleLogout} className="logout icon"/>
+            <MdLogout onClick={handleLogout} className="logout icon" />
           </button>
-        </div> :
-        <Link to="/login" className="Login">Login</Link>}
+        </div>
+      ) : (
+        <Link to="/login" className="Login">
+          Login
+        </Link>
+      )}
     </div>
-  )
-
+  );
 }
