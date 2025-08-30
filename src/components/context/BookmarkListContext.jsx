@@ -3,7 +3,7 @@ import axios from "axios";
 import toast from "react-hot-toast";
 const BookmarkContext = createContext();
 function BookmarkProvider({ children }) {
-  const BASE_URL = "http://localhost:5000";
+  const BASE_URL = "https://hotel-app.liara.run";
 
   const intialStatae = {
     bookmarks: [],

@@ -1,6 +1,9 @@
 import useFetch from "../../hooks/useFetch";
 function LocationList() {
-  const { data, isLoading } = useFetch("http://localhost:5000/hotels", "");
+  const { data, isLoading } = useFetch(
+    "https://hotel-app.liara.run/hotels",
+    ""
+  );
 
   if (isLoading) return <div>isLoading ...</div>;
 
